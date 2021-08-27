@@ -1,4 +1,5 @@
 import React from 'react'
+import './navbar.css'
 
 const NavBar = () => {
     return (
@@ -11,33 +12,50 @@ const NavBar = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item mx-2">
-                                <a className="nav-link" href="index.html">Inicio</a>
+                    <div className="collapse navbar-collapse justify-content-center align-self-end" id="navbarNav">
+                        <ul className="navbar-nav align-items-center">
+                            <li className="nav-item mx-1">
+                                <a className="nav-link" href="index.html">INICIO</a>
                             </li>
-                            <li class="nav-item dropdown mx-2">
+                            <li class="nav-item dropdown mx-1">
                                 <a className="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Home and Deco
+                                    HOME AND DECO
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="todos-los-productos">Todos los productos</a></li>
-                                    <li><a className="dropdown-item" href="almohadones">Almohadones</a></li>
-                                    <li><a className="dropdown-item" href="caminos">Caminos de Mesa</a></li>
-                                    <li><a className="dropdown-item" href="espejos">Espejos</a></li>
-                                    <li><a className="dropdown-item" href="fundas-almohadones">Fundas de Almohadones</a></li>
-                                    <li><a className="dropdown-item" href="manteles">Manteles</a></li>
-                                    <li><a className="dropdown-item" href="tapices">Tapices</a></li>
+                                    <li><a className="dropdown-item" href="todos-los-productos">TODOS LOS PRODUCTOS</a></li>
+                                    <li><a className="dropdown-item" href="almohadones">ALMOHADONES</a></li>
+                                    <li><a className="dropdown-item" href="caminos">CAMINOS DE MESA</a></li>
+                                    <li><a className="dropdown-item" href="espejos">ESPEJOS</a></li>
+                                    <li><a className="dropdown-item" href="fundas-almohadones">FUNDAS DE ALMOHADONES</a></li>
+                                    <li><a className="dropdown-item" href="manteles">MANTELES</a></li>
+                                    <li><a className="dropdown-item" href="tapices">TAPICES</a></li>
                                 </ul>
                             </li>
-                            <li className="nav-item mx-2">
-                                <a className="nav-link" href="preguntas-frecuentes">Preguntas Frecuentes</a>
+                            <li className="nav-item mx-1">
+                                <a className="nav-link" href="preguntas-frecuentes">PREGUNTAS FRECUENTES</a>
                             </li>
-                            <li className="nav-item mx-2">
-                                <a className="nav-link" href="contacto">Contacto</a>
+                            <li className="nav-item mx-1">
+                                <a className="nav-link" href="contacto">CONTACTO</a>
                             </li>
                         </ul>
-                    </div>
+                        <div className="mx-4 mt-3 d-flex justify-content-center align-items-center custom-session">
+                                <a href="iniciar-sesion" className="my-2 mx-2 text-secondary  link-custom-session">
+                                    INICIAR SESION
+                                </a>
+                                <span>|</span>
+                                <a href="crear-cuenta" className="my-2 mx-2 text-secondary  link-custom-session">
+                                    CREAR CUENTA
+                                </a>
+                                <button className="btn btn-outline-secondary position-relative">
+                                    <i className="fas fa-shopping-cart custom-cart"></i>
+                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                                        0
+                                        <span className="visually-hidden">unread messages</span>
+                                    </span>
+                                </button>
+                        </div>    
+                    </div>   
+                    
                 </div>
             </nav>
         </div>
