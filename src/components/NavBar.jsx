@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import "./navbar.css";
+import "../styles/components/navbar.css";
 
 const NavBar = () => {
   return (
@@ -37,7 +37,7 @@ const NavBar = () => {
                   INICIO
                 </a>
               </li>
-              <li class="nav-item dropdown mx-1">
+              <li className="nav-item dropdown mx-1">
                 <a
                   className="nav-link dropdown-toggle"
                   href="index.html"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./itemcount.css";
+import "../styles/components/itemcount.css";
 
 const ItemCount = ({ stock, initial, title }) => {
   const [count, setCount] = useState(initial);
@@ -32,7 +32,7 @@ const ItemCount = ({ stock, initial, title }) => {
       </div>
       <div className="text-center m-2 d-grid bg-white">
         <button className="btn btn-secondary">
-          <i class="fas fa-cart-plus mx-2"></i>
+          <i className="fas fa-cart-plus mx-2"></i>
           Agregar al carrito
         </button>
       </div>

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Almohadon Tusor",
+    "description": "Tela tusor con flecos",
+    "price": 2400,
+    "promotion": 40,
+    "freeTax": 6,
+    "image": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo="
+  },
+  {
+    "id": 2,
+    "title": "Acolchado",
+    "description": "Acolchado 100% Algodon - Lienzo",
+    "price": 9200,
+    "promotion": 20,
+    "freeTax": 12,
+    "image": "https://media.istockphoto.com/photos/folded-rolls-duvet-is-lying-on-the-dresser-against-the-background-of-picture-id1161232231?k=20&m=1161232231&s=612x612&w=0&h=c2KFRqROlWjPCPVhzM7ETcgRAzbGXrlqyELCJtWe2qI="
+  },
+  {
+    "id": 3,
+    "title": "Mantel",
+    "description": "Mantel 100% Algodon",
+    "price": 3000,
+    "promotion": 0,
+    "freeTax": 0,
+    "image": "https://media.istockphoto.com/photos/kitchen-towel-picture-id505826596?k=20&m=505826596&s=612x612&w=0&h=EpJ8QiCSdmUqtEqLqFEyA0ew1-06AbMtmgo6IfjDGQI="
+  }
+]
