@@ -1,4 +1,4 @@
-/* import ItemCount from "./components/ItemCount"; */
+import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 
@@ -7,7 +7,7 @@ const App = () => {
     <div className="App">
       <NavBar />
       <ItemListContainer greeting="productos destacados" />
-      {/* <ItemCount stock={10} initial={1} title="Camisa Rayada" /> */}
+      <ItemDetailContainer id={1} />
     </div>
   );
 };

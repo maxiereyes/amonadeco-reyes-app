@@ -6,7 +6,25 @@
     "price": 2400,
     "promotion": 40,
     "freeTax": 6,
-    "image": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo="
+    "image": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo=",
+    "gallery": [
+      {
+        "original": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo=",
+        "thumbnail": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo="
+      },
+      {
+        "original": "https://media.istockphoto.com/photos/soft-blue-pillow-isolated-on-white-background-picture-id1156463363?k=20&m=1156463363&s=612x612&w=0&h=39Rkkv36rppqzbjSRa2HuXwPEG494OBedpEMQ1f9JWY=",
+        "thumbnail": "https://media.istockphoto.com/photos/soft-blue-pillow-isolated-on-white-background-picture-id1156463363?k=20&m=1156463363&s=612x612&w=0&h=39Rkkv36rppqzbjSRa2HuXwPEG494OBedpEMQ1f9JWY="
+      },
+      {
+        "original": "https://media.istockphoto.com/photos/blank-white-pillow-case-picture-id645600554?k=20&m=645600554&s=612x612&w=0&h=BZzgiyGk3ia8LKUAzm_6lu5bf0LcuJ4TUMfSwzArvnQ=",
+        "thumbnail": "https://media.istockphoto.com/photos/blank-white-pillow-case-picture-id645600554?k=20&m=645600554&s=612x612&w=0&h=BZzgiyGk3ia8LKUAzm_6lu5bf0LcuJ4TUMfSwzArvnQ="
+      },
+      {
+        "original": "https://media.istockphoto.com/photos/cushion-on-sofa-in-living-room-picture-id981020260?k=20&m=981020260&s=612x612&w=0&h=aFCYcXEKbzQSv_l_ykRc3p4gPVzzx2coEQYRyzugt4A=",
+        "thumbnail": "https://media.istockphoto.com/photos/cushion-on-sofa-in-living-room-picture-id981020260?k=20&m=981020260&s=612x612&w=0&h=aFCYcXEKbzQSv_l_ykRc3p4gPVzzx2coEQYRyzugt4A="
+      }
+    ]
   },
   {
     "id": 2,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/components/itemcount.css";
 
-const ItemCount = ({ stock, initial, title }) => {
+const ItemCount = ({ stock, initial, action }) => {
   const [count, setCount] = useState(initial);
   const onAdd = () => {
     if (count < stock) {
@@ -15,10 +15,7 @@ const ItemCount = ({ stock, initial, title }) => {
     }
   };
   return (
-    <div className="card bg-light col-2 custom-card">
-      <div className="card-title">
-        <h5 className="text-secondary p-2 lead text-uppercase">{title}</h5>
-      </div>
+    <div className="card bg-light col-2 custom-card border-0">
       <div className="card-body">
         <div className="d-flex justify-content-center align-items-center">
           <button className="btn btn-outline-secondary" onClick={onAdd}>
@@ -31,7 +28,7 @@ const ItemCount = ({ stock, initial, title }) => {
         </div>
       </div>
       <div className="text-center m-2 d-grid bg-white">
-        <button className="btn btn-secondary">
+        <button className="btn btn-secondary" onClick={() => action(count)}>
           <i className="fas fa-cart-plus mx-2"></i>
           Agregar al carrito
         </button>
