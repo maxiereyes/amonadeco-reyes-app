@@ -1,47 +1,225 @@
 [
   {
-    "id": 1,
-    "title": "Almohadon Tusor",
-    "description": "Tela tusor con flecos",
-    "price": 2400,
-    "promotion": 40,
+    "id": "1",
+    "title": "Espejo Cala",
+    "subtitle": "Material Macrame - Tejidos Artesanales",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis est vitae nunc finibus commodo ac id libero. Nullam nisl diam, laoreet eget ultricies a, ullamcorper ut justo. Duis erat velit, semper id pretium a, euismod at est. Vivamus at cursus lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quam urna, semper et tempus id, feugiat vitae metus. Integer condimentum at lacus non volutpat. Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.",
+    "price": 2500,
+    "promotion": 20,
     "freeTax": 6,
-    "image": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo=",
+    "category": "1E",
+    "measures": [
+      {
+        "value": "26cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "29cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "32cm",
+        "price": 0,
+        "color": ""
+      }
+    ],
+    "specification": {
+      "material": "Macrame",
+      "peso": "200grs"
+    },
+    "comments": [],
+    "image": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_1_qjzwem.jpg",
+    "imageAlt": "Espejo Cala",
     "gallery": [
       {
-        "original": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo=",
-        "thumbnail": "https://media.istockphoto.com/photos/red-orange-and-white-throw-pillows-on-a-white-background-picture-id182354999?k=20&m=182354999&s=612x612&w=0&h=5_1nrHDOCxin3MqJ-RlSc19y6EYBCnmsKcZ9ukqOIOo="
-      },
-      {
-        "original": "https://media.istockphoto.com/photos/soft-blue-pillow-isolated-on-white-background-picture-id1156463363?k=20&m=1156463363&s=612x612&w=0&h=39Rkkv36rppqzbjSRa2HuXwPEG494OBedpEMQ1f9JWY=",
-        "thumbnail": "https://media.istockphoto.com/photos/soft-blue-pillow-isolated-on-white-background-picture-id1156463363?k=20&m=1156463363&s=612x612&w=0&h=39Rkkv36rppqzbjSRa2HuXwPEG494OBedpEMQ1f9JWY="
-      },
-      {
-        "original": "https://media.istockphoto.com/photos/blank-white-pillow-case-picture-id645600554?k=20&m=645600554&s=612x612&w=0&h=BZzgiyGk3ia8LKUAzm_6lu5bf0LcuJ4TUMfSwzArvnQ=",
-        "thumbnail": "https://media.istockphoto.com/photos/blank-white-pillow-case-picture-id645600554?k=20&m=645600554&s=612x612&w=0&h=BZzgiyGk3ia8LKUAzm_6lu5bf0LcuJ4TUMfSwzArvnQ="
-      },
-      {
-        "original": "https://media.istockphoto.com/photos/cushion-on-sofa-in-living-room-picture-id981020260?k=20&m=981020260&s=612x612&w=0&h=aFCYcXEKbzQSv_l_ykRc3p4gPVzzx2coEQYRyzugt4A=",
-        "thumbnail": "https://media.istockphoto.com/photos/cushion-on-sofa-in-living-room-picture-id981020260?k=20&m=981020260&s=612x612&w=0&h=aFCYcXEKbzQSv_l_ykRc3p4gPVzzx2coEQYRyzugt4A="
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_1_qjzwem.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_1_qjzwem.jpg"
       }
-    ]
+    ],
+    "dtPublication": "2021-09-02T18:00:00.000Z",
+    "stock": 2,
+    "countSales": 10
   },
   {
-    "id": 2,
-    "title": "Acolchado",
-    "description": "Acolchado 100% Algodon - Lienzo",
-    "price": 9200,
+    "id": "2",
+    "title": "Espejo Aleli",
+    "subtitle": "Material Macrame - Tejidos Artesanales",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis est vitae nunc finibus commodo ac id libero. Nullam nisl diam, laoreet eget ultricies a, ullamcorper ut justo. Duis erat velit, semper id pretium a, euismod at est. Vivamus at cursus lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quam urna, semper et tempus id, feugiat vitae metus. Integer condimentum at lacus non volutpat. Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.",
+    "price": 2500,
     "promotion": 20,
-    "freeTax": 12,
-    "image": "https://media.istockphoto.com/photos/folded-rolls-duvet-is-lying-on-the-dresser-against-the-background-of-picture-id1161232231?k=20&m=1161232231&s=612x612&w=0&h=c2KFRqROlWjPCPVhzM7ETcgRAzbGXrlqyELCJtWe2qI="
+    "freeTax": 6,
+    "category": "1E",
+    "measures": [
+      {
+        "value": "26cm",
+        "price": 2800,
+        "color": "Gris Topo"
+      },
+      {
+        "value": "29cm",
+        "price": 0,
+        "color": "Blanco"
+      },
+      {
+        "value": "32cm",
+        "price": 0,
+        "color": "Natural"
+      }
+    ],
+    "specification": {
+      "material": "Macrame",
+      "peso": "200grs"
+    },
+    "comments": [],
+    "image": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_swyv5y.jpg",
+    "imageAlt": "Espejo Cala",
+    "gallery": [
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_swyv5y.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_swyv5y.jpg"
+      },
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.03_zh0xry.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.03_zh0xry.jpg"
+      },
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_3_zx1sfz.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_3_zx1sfz.jpg"
+      }
+    ],
+    "dtPublication": "2021-09-02T18:00:00.000Z",
+    "stock": 2,
+    "countSales": 10
   },
   {
-    "id": 3,
-    "title": "Mantel",
-    "description": "Mantel 100% Algodon",
-    "price": 3000,
-    "promotion": 0,
-    "freeTax": 0,
-    "image": "https://media.istockphoto.com/photos/kitchen-towel-picture-id505826596?k=20&m=505826596&s=612x612&w=0&h=EpJ8QiCSdmUqtEqLqFEyA0ew1-06AbMtmgo6IfjDGQI="
+    "id": "3",
+    "title": "Tapiz Anahi",
+    "subtitle": "Material Hilo de Algodon - Tejidos Artesanales",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis est vitae nunc finibus commodo ac id libero. Nullam nisl diam, laoreet eget ultricies a, ullamcorper ut justo. Duis erat velit, semper id pretium a, euismod at est. Vivamus at cursus lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quam urna, semper et tempus id, feugiat vitae metus. Integer condimentum at lacus non volutpat. Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.",
+    "price": 2500,
+    "promotion": 20,
+    "freeTax": 6,
+    "category": "1T",
+    "measures": [
+      {
+        "value": "26cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "29cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "32cm",
+        "price": 0,
+        "color": ""
+      }
+    ],
+    "specification": {
+      "material": "Macrame",
+      "peso": "200grs"
+    },
+    "comments": [],
+    "image": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.31_2_fujirp.jpg",
+    "imageAlt": "Espejo Cala",
+    "gallery": [
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_1_qjzwem.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.24.46_1_qjzwem.jpg"
+      }
+    ],
+    "dtPublication": "2021-09-02T18:00:00.000Z",
+    "stock": 2,
+    "countSales": 10
+  },
+  {
+    "id": "4",
+    "title": "Tapiz Amelia",
+    "subtitle": "Material Hilo de Algodon - Tejidos Artesanales",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis est vitae nunc finibus commodo ac id libero. Nullam nisl diam, laoreet eget ultricies a, ullamcorper ut justo. Duis erat velit, semper id pretium a, euismod at est. Vivamus at cursus lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quam urna, semper et tempus id, feugiat vitae metus. Integer condimentum at lacus non volutpat. Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.",
+    "price": 2500,
+    "promotion": 20,
+    "freeTax": 6,
+    "category": "1T",
+    "measures": [
+      {
+        "value": "26cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "29cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "32cm",
+        "price": 0,
+        "color": ""
+      }
+    ],
+    "specification": {
+      "material": "Macrame",
+      "peso": "200grs"
+    },
+    "comments": [],
+    "image": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.31_mfnsqu.jpg",
+    "imageAlt": "Espejo Cala",
+    "gallery": [
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.31_mfnsqu.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823758/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.25.31_mfnsqu.jpg"
+      }
+    ],
+    "dtPublication": "2021-09-02T18:00:00.000Z",
+    "stock": 2,
+    "countSales": 10
+  },
+  {
+    "id": "5",
+    "title": "Espejo Muna",
+    "subtitle": "Material Macrame - Tejidos Artesanales",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis est vitae nunc finibus commodo ac id libero. Nullam nisl diam, laoreet eget ultricies a, ullamcorper ut justo. Duis erat velit, semper id pretium a, euismod at est. Vivamus at cursus lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam quam urna, semper et tempus id, feugiat vitae metus. Integer condimentum at lacus non volutpat. Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.Praesent consequat, sem a feugiat tempor, mi arcu feugiat augue, at semper arcu arcu vitae neque. Nullam id iaculis dui, a pulvinar felis. Donec suscipit ut erat et imperdiet. Aliquam id vehicula libero, vehicula bibendum erat.",
+    "price": 2500,
+    "promotion": 20,
+    "freeTax": 6,
+    "category": "1E",
+    "measures": [
+      {
+        "value": "26cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "29cm",
+        "price": 0,
+        "color": ""
+      },
+      {
+        "value": "32cm",
+        "price": 0,
+        "color": ""
+      }
+    ],
+    "specification": {
+      "material": "Macrame",
+      "peso": "200grs"
+    },
+    "comments": [],
+    "image": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.23.53_hmncqo.jpg",
+    "imageAlt": "Espejo Cala",
+    "gallery": [
+      {
+        "original": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.23.53_hmncqo.jpg",
+        "thumbnail": "https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631823757/AmonaDeco/WhatsApp_Image_2021-09-16_at_11.23.53_hmncqo.jpg"
+      }
+    ],
+    "dtPublication": "2021-09-02T18:00:00.000Z",
+    "stock": 2,
+    "countSales": 10
   }
 ]

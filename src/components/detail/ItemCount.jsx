@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../styles/components/itemcount.css";
+import "../../styles/components/itemcount.css";
 
-const ItemCount = ({ stock, initial, action }) => {
+export const ItemCount = ({ stock, initial, action }) => {
   const [count, setCount] = useState(initial);
   const onAdd = () => {
     if (count < stock) {
@@ -19,11 +19,11 @@ const ItemCount = ({ stock, initial, action }) => {
       <div className="card-body">
         <div className="d-flex justify-content-center align-items-center">
           <button className="btn btn-outline-secondary" onClick={onAdd}>
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </button>
           <div className="rounded border px-4 py-1 mx-2 lead">{count}</div>
           <button className="btn btn-outline-secondary" onClick={onSubstract}>
-            <i class="fas fa-minus"></i>
+            <i className="fas fa-minus"></i>
           </button>
         </div>
       </div>
@@ -36,5 +36,3 @@ const ItemCount = ({ stock, initial, action }) => {
     </div>
   );
 };
-
-export default ItemCount;
