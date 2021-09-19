@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { CustomBreadCrumb } from "../breadcrumb/CustomBreadCrumb";
 import { GalleryComponent } from "../gallery/GalleryComponent";
@@ -10,6 +10,8 @@ import { Title } from "../utils/Title";
 import "../../styles/components/itemdetail.css";
 
 export const ItemDetail = ({ product }) => {
+  const [countToAdd, setCountToAdd] = useState(0);
+
   const {
     location: { pathname },
   } = useHistory();
@@ -27,7 +29,7 @@ export const ItemDetail = ({ product }) => {
   } = product;
 
   const addItem = (count) => {
-    alert(`Se agregaron ${count} unidades de ${title} a tu carrito`);
+    setCountToAdd(count);
   };
 
   return (

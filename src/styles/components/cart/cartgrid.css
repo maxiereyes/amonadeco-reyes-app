@@ -1,0 +1,18 @@
+.custom__cart__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.custom__cart__grid > p {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 570px) {
+  .custom__cart__grid {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto 1fr;
+  }
+}
