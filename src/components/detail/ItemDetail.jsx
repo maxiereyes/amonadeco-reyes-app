@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { CustomBreadCrumb } from "../breadcrumb/CustomBreadCrumb";
 import { GalleryComponent } from "../gallery/GalleryComponent";
 import { ItemCount } from "./ItemCount";
 import { CurrencyFormat } from "../utils/CurrencyFormat";
@@ -11,10 +9,6 @@ import "../../styles/components/itemdetail.css";
 
 export const ItemDetail = ({ product }) => {
   const [countToAdd, setCountToAdd] = useState(0);
-
-  const {
-    location: { pathname },
-  } = useHistory();
 
   const {
     description,
@@ -28,7 +22,8 @@ export const ItemDetail = ({ product }) => {
     stock,
   } = product;
 
-  const addItem = (count) => {
+  const onAdd = (count) => {
+    alert(`Se agregaron ${count} unidades a su carrito`);
     setCountToAdd(count);
   };
 
@@ -38,9 +33,6 @@ export const ItemDetail = ({ product }) => {
         <GalleryComponent images={gallery} />
       </div>
       <div className=" px-4 col-12 col-lg-4 offset-lg-1 justify-content-center justify-content-lg-start d-flex flex-column align-items-lg-start align-items-center my-lg-2 my-4">
-        <div>
-          <CustomBreadCrumb path={pathname.split("/")} />
-        </div>
         <h1 className="m-0 mb-2 text-uppercase">{title}</h1>
         <h2 className="m-0 mb-2 lead text-muted">{subtitle}</h2>
         <h3 className="m-0 my-4 font-weight-bold custom__price__font">
@@ -57,7 +49,7 @@ export const ItemDetail = ({ product }) => {
         </div>
 
         <div className="mt-4">
-          <ItemCount stock={stock} initial={1} action={addItem} />
+          <ItemCount stock={stock} initial={1} addItem={onAdd} />
         </div>
       </div>
       <div className="border rounded col-12 col-lg-7 my-4">

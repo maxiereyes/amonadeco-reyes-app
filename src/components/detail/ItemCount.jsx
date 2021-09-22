@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/components/itemcount.css";
 
-export const ItemCount = ({ stock, initial, action }) => {
+export const ItemCount = ({ stock, initial, addItem }) => {
+  const [btn, setBtn] = useState("btnCart");
   const [count, setCount] = useState(initial);
+
   const onAdd = () => {
     if (count < stock) {
       setCount(count + 1);
@@ -14,6 +17,12 @@ export const ItemCount = ({ stock, initial, action }) => {
       setCount(count - 1);
     }
   };
+
+  const addToCart = (count) => {
+    addItem(count);
+    setBtn("btnBuyCart");
+  };
+
   return (
     <div className="card bg-light col-2 custom-card border-0">
       <div className="card-body">
@@ -28,10 +37,19 @@ export const ItemCount = ({ stock, initial, action }) => {
         </div>
       </div>
       <div className="text-center m-2 d-grid bg-white">
-        <button className="btn btn-secondary" onClick={() => action(count)}>
-          <i className="fas fa-cart-plus mx-2"></i>
-          Agregar al carrito
-        </button>
+        {btn === "btnCart" ? (
+          <button
+            className="btn btn-secondary"
+            onClick={() => addToCart(count)}
+          >
+            <i className="fas fa-cart-plus mx-2"></i>
+            Agregar al carrito
+          </button>
+        ) : (
+          <Link to="/cart" className="btn btn-dark text-light">
+            Finalizar Compra
+          </Link>
+        )}
       </div>
     </div>
   );

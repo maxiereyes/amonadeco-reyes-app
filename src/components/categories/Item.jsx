@@ -5,10 +5,6 @@ import "../../styles/components/item.css";
 const Item = ({ product, category }) => {
   const { title, subtitle, image, promotion, price, id } = product;
 
-  const addCart = () => {
-    alert("Agregado al carrito satisfactoriamente!");
-  };
-
   return (
     <div className="card p-4 custom_card">
       <div className="container_image position-relative">
@@ -27,17 +23,14 @@ const Item = ({ product, category }) => {
       <div className="text-center ">
         <h2 className="custom_price">${price}</h2>
       </div>
-      <div className="d-flex justify-content-between w-100 py-3">
-        <button className="btn btn-dark custom_font_button" onClick={addCart}>
-          <i className="fas fa-cart-plus"></i>
-        </button>
-        <Link
-          className="btn btn-dark custom_font_button"
-          to={`/category/${category}/detail/${id}`}
-        >
-          <i className="far fa-eye"></i>
-        </Link>
-      </div>
+
+      <Link
+        className="btn w-100 btn-secondary custom_font_button mt-3 d-flex align-items-center justify-content-center"
+        to={`/category/${category}/detail/${id}`}
+      >
+        <i className="far fa-eye mx-2"></i>
+        <span className="text-light">Ver detalle</span>
+      </Link>
     </div>
   );
 };
