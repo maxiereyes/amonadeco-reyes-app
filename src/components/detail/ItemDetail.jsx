@@ -38,6 +38,7 @@ export const ItemDetail = ({ product }) => {
       count,
       measures: currentSelectMeasures,
       image: product.image,
+      total: product.price * count,
     });
   };
 

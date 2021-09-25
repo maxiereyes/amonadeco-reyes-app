@@ -30,7 +30,7 @@ export default function CartContextProvider({ children }) {
   };
 
   const deleteItem = (id) => {
-    const newCartList = cartList.filter((product) => product.id === id);
+    const newCartList = cartList.filter((product) => product.id !== id);
     setCartList(newCartList);
   };
 
