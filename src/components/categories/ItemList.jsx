@@ -7,15 +7,21 @@ const ItemList = ({ products, idCategory, title }) => {
   return (
     <>
       <Title text={idCategory ? idCategory : title} />
-      <div className="d-flex flex-wrap justify-content-around">
-        {idCategory ? (
-          products.map((product) => (
-            <Item key={product.id} product={product} category={idCategory} />
-          ))
-        ) : (
-          <CustomCarousel items={products} />
-        )}
-      </div>
+      {products.length ? (
+        <div className="d-flex flex-wrap justify-content-around">
+          {idCategory ? (
+            products.map((product) => (
+              <Item key={product.id} product={product} category={idCategory} />
+            ))
+          ) : (
+            <CustomCarousel items={products} />
+          )}
+        </div>
+      ) : (
+        <h2 className="text-center my-3 text-muted text-uppercase">
+          No hay productos para esta categoria.
+        </h2>
+      )}
     </>
   );
 };

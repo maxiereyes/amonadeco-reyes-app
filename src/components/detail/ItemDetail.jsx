@@ -6,9 +6,13 @@ import { FreeTax } from "../utils/FreeTax";
 import { InputSelect } from "../utils/InputSelect";
 import { Title } from "../utils/Title";
 import "../../styles/components/itemdetail.css";
+import { useCartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ product }) => {
-  const [countToAdd, setCountToAdd] = useState(0);
+  const { addToCart } = useCartContext();
+  const [currentSelectMeasures, setCurrentSelectMeasures] = useState(
+    product.measures[0].value
+  );
 
   const {
     description,
@@ -22,9 +26,19 @@ export const ItemDetail = ({ product }) => {
     stock,
   } = product;
 
+  const addSelectedItem = (e) => {
+    setCurrentSelectMeasures(e.target.value);
+  };
+
   const onAdd = (count) => {
-    alert(`Se agregaron ${count} unidades a su carrito`);
-    setCountToAdd(count);
+    addToCart({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      count,
+      measures: currentSelectMeasures,
+      image: product.image,
+    });
   };
 
   return (
@@ -44,7 +58,7 @@ export const ItemDetail = ({ product }) => {
         <div className="d-flex align-items-center">
           <p className="my-0 text-secondary">Medidas:</p>
           <div className="mx-2">
-            <InputSelect items={measures} />
+            <InputSelect items={measures} setSelectedItem={addSelectedItem} />
           </div>
         </div>
 

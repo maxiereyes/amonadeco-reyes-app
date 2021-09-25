@@ -16,10 +16,6 @@ export const Cart = ({ product }) => {
             <span className="custom__measures">MEDIDAS: </span>
             {product.measures}
           </p>
-          <p>
-            <span className="custom__color">COLOR: </span>
-            {product.color}
-          </p>
         </div>
       </div>
       <div>

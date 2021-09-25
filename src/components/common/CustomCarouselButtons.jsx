@@ -7,7 +7,7 @@ export const PrevButton = ({ className, style, onClick }) => (
     style={{ ...style }}
     onClick={onClick}
   >
-    <i class="fas fa-arrow-left"></i>
+    <i className="fas fa-arrow-left"></i>
   </div>
 );
 
@@ -17,6 +17,6 @@ export const NextButton = ({ className, style, onClick }) => (
     style={{ ...style }}
     onClick={onClick}
   >
-    <i class="fas fa-arrow-right"></i>
+    <i className="fas fa-arrow-right"></i>
   </div>
 );
