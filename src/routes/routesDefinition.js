@@ -5,37 +5,8 @@ export const routes = [
   },
   {
     name: "CATEGORIAS",
-    path: "/category",
-    nestedItem: [
-      {
-        name: "TODOS LOS PRODUCTOS",
-        path: "/todos",
-      },
-      {
-        name: "almohadones",
-        path: "/almohadones",
-      },
-      {
-        name: "caminos de mesa",
-        path: "/caminosdemesa",
-      },
-      {
-        name: "espejos",
-        path: "/espejos",
-      },
-      {
-        name: "fundas de almohadones",
-        path: "/fundasalmohadones",
-      },
-      {
-        name: "manteles",
-        path: "/manteles",
-      },
-      {
-        name: "tapices",
-        path: "/tapices",
-      },
-    ],
+    path: "/categoria",
+    nested: true,
   },
   {
     name: "preguntas frecuentes",

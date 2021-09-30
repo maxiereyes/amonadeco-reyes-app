@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
   const { idItem } = useParams();
 
   useEffect(() => {
-    setTimeout(async () => {
+    const getProduct = async () => {
       try {
         const productFound = await getProductById(idItem);
         setProduct(productFound);
@@ -19,7 +19,9 @@ export const ItemDetailContainer = () => {
       } catch (error) {
         console.log(error);
       }
-    }, 2000);
+    };
+
+    getProduct();
   }, [idItem]);
 
   return (

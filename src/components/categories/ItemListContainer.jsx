@@ -6,20 +6,23 @@ import {
 } from "../../api/productsService";
 import ItemList from "./ItemList";
 import { Loading } from "../utils/Loading";
-import { getCategoryTitleByValue } from "../../helpers/getCategoryTitle";
+import { getCategoryNameById } from "../../api/categoryService";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [nameCategory, setNameCategory] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
-    let data = [];
     setLoading(true);
-    setTimeout(async () => {
+    const getAllProducts = async () => {
+      let data = [];
       try {
-        if (id && id !== "todos") {
+        if (id) {
           data = await getProductsByCategoryId(id);
+          const dataCategory = await getCategoryNameById(id);
+          setNameCategory(dataCategory.name);
         } else {
           data = await getProducts();
         }
@@ -28,7 +31,9 @@ export const ItemListContainer = () => {
       } catch (error) {
         console.log(error);
       }
-    }, 2000);
+    };
+
+    getAllProducts();
   }, [id]);
 
   return (
@@ -39,8 +44,7 @@ export const ItemListContainer = () => {
         <>
           <ItemList
             products={products}
-            idCategory={id ? getCategoryTitleByValue(id) : ""}
-            title="Productos Destacados"
+            title={nameCategory ? nameCategory : "Productos Destacados"}
           />
         </>
       )}

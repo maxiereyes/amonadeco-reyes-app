@@ -1,22 +1,30 @@
-import { listCategories } from "../helpers/listCategories";
+import { getFirestore } from "../firebase/firebase";
+
+const dbQuery = getFirestore();
+const productsCollection = dbQuery.collection("products");
 
 export const getProducts = async () => {
-  const response = await fetch("/mockdata.json");
-  const data = await response.json();
+  const response = await productsCollection.get();
+  const data = response.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
   return data;
 };
 
 export const getProductById = async (id) => {
-  const response = await fetch("/mockdata.json");
-  const data = await response.json();
-  const product = data.filter((item) => item.id === id);
-  return product[0];
+  const response = await productsCollection.doc(id).get();
+  const data = response.data();
+  return data;
 };
 
 export const getProductsByCategoryId = async (idCategory) => {
-  const response = await fetch("/mockdata.json");
-  const data = await response.json();
-  const category = listCategories.find((cat) => cat.value === idCategory);
-  const products = data.filter((item) => item.category === category.id);
-  return products;
+  const response = await productsCollection
+    .where("category", "==", idCategory)
+    .get();
+  const data = response.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  return data;
 };

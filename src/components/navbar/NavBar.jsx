@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartWidget from "../cart/CartWidget";
 import "../../styles/components/navbar.css";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes/routesDefinition";
 import { LinkComponent } from "./LinkComponent";
+import { getCategories } from "../../api/categoryService";
 
 const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const getAllCategories = async () => {
+      try {
+        const data = await getCategories();
+        setCategories(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getAllCategories();
+  }, []);
+
   return (
     <div className="shadow-sm p-2 mb-2 rounded">
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -36,7 +52,7 @@ const NavBar = () => {
           >
             <ul className="navbar-nav align-items-center">
               {routes.map((route, index) =>
-                route.nestedItem && route.nestedItem.length ? (
+                route.nested ? (
                   <li className="nav-item dropdown mx-1" key={index}>
                     <LinkComponent
                       className="nav-link dropdown-toggle"
@@ -52,12 +68,12 @@ const NavBar = () => {
                       aria-labelledby="navbarDropdown"
                     >
                       <li>
-                        {route.nestedItem.map((item, index) => (
+                        {categories.map((item) => (
                           <LinkComponent
-                            key={index}
+                            key={item.id}
                             className="dropdown-item"
                             text={item.name}
-                            path={`${route.path}${item.path}`}
+                            path={`${route.path}/${item.id}`}
                           />
                         ))}
                       </li>

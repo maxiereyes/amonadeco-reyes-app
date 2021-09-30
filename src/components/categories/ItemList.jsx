@@ -3,15 +3,15 @@ import { CustomCarousel } from "../common/CustomCarousel";
 import Item from "./Item";
 import { Title } from "../utils/Title";
 
-const ItemList = ({ products, idCategory, title }) => {
+const ItemList = ({ products, title }) => {
   return (
     <>
-      <Title text={idCategory ? idCategory : title} />
+      <Title text={title} />
       {products.length ? (
         <div className="d-flex flex-wrap justify-content-around">
-          {idCategory ? (
+          {title !== "Productos Destacados" ? (
             products.map((product) => (
-              <Item key={product.id} product={product} category={idCategory} />
+              <Item key={product.id} product={product} />
             ))
           ) : (
             <CustomCarousel items={products} />

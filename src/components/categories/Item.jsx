@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/components/item.css";
 
-const Item = ({ product, category }) => {
+const Item = ({ product }) => {
   const { title, subtitle, image, promotion, price, id } = product;
 
   return (
@@ -26,7 +26,7 @@ const Item = ({ product, category }) => {
 
       <Link
         className="btn w-100 btn-secondary custom_font_button mt-3 d-flex align-items-center justify-content-center"
-        to={`/category/${category}/detail/${id}`}
+        to={`/detail/${id}`}
       >
         <i className="far fa-eye mx-2"></i>
         <span className="text-light">Ver detalle</span>
