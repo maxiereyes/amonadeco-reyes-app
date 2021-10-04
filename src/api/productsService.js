@@ -14,7 +14,10 @@ export const getProducts = async () => {
 
 export const getProductById = async (id) => {
   const response = await productsCollection.doc(id).get();
-  const data = response.data();
+  const data = {
+    ...response.data(),
+    id: response.id,
+  };
   return data;
 };
 

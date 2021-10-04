@@ -14,6 +14,6 @@ export const getCategories = async () => {
 
 export const getCategoryNameById = async (id) => {
   const response = await categoriesCollection.doc(id).get();
-  const data = response.data();
+  const data = { ...response.data(), id: response.id };
   return data;
 };
