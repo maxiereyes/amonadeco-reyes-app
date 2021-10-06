@@ -25,6 +25,7 @@ export const ItemListContainer = () => {
           setNameCategory(dataCategory.name);
         } else {
           data = await getProducts();
+          setNameCategory("");
         }
         setProducts(data);
         setLoading(false);

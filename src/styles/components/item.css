@@ -20,16 +20,13 @@
 
 .custom_card {
   width: 20rem;
+  height: 32rem;
   border: 1px solid transparent;
   margin: 1rem;
   align-items: center;
   box-shadow: 5px 3px 20px -8px rgba(0, 0, 0, 0.74);
   -webkit-box-shadow: 5px 3px 20px -8px rgba(0, 0, 0, 0.74);
   -moz-box-shadow: 5px 3px 20px -8px rgba(0, 0, 0, 0.74);
-}
-
-.custom_card:hover {
-  border: 1px solid rgb(224, 224, 224);
 }
 
 .text_promotion {

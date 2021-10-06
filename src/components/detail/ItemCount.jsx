@@ -36,6 +36,7 @@ export const ItemCount = ({ stock, initial, addItem }) => {
           </button>
         </div>
       </div>
+      <div className="text-muted text-center mb-2">{`Stock: ${stock}`}</div>
       <div className="text-center m-2 d-grid bg-white">
         {btn === "btnCart" ? (
           <button
@@ -46,9 +47,14 @@ export const ItemCount = ({ stock, initial, addItem }) => {
             Agregar al carrito
           </button>
         ) : (
-          <Link to="/cart" className="btn btn-dark text-light">
-            Finalizar Compra
-          </Link>
+          <>
+            <Link to="/cart" className="btn btn-dark text-light">
+              Finalizar Compra
+            </Link>
+            <Link to="/" className="nav-link text-dark my-2">
+              Seguir Comprando
+            </Link>
+          </>
         )}
       </div>
     </div>

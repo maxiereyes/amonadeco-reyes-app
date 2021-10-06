@@ -1,7 +1,7 @@
 .custom__cart__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 20px auto;
   gap: 1rem;
   margin-top: 2rem;
   width: 80%;

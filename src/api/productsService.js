@@ -31,3 +31,11 @@ export const getProductsByCategoryId = async (idCategory) => {
   }));
   return data;
 };
+
+export const updateProductStock = async (id, newCount) => {
+  const response = await productsCollection.doc(id).get();
+  const data = await response.data();
+  return await productsCollection
+    .doc(id)
+    .update({ stock: data.stock - newCount });
+};
