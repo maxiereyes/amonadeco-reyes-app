@@ -5,33 +5,64 @@ const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
 
 export default function CartContextProvider({ children }) {
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState({
+    items: [],
+    total: 0,
+  });
 
   const addToCart = (item) => {
-    const productFound = cartList.find((product) => product.id === item.id);
+    const productFound = cartList.items.find(
+      (product) =>
+        product.id === item.id && product.measures.value === item.measures.value
+    );
 
     if (productFound) {
-      const newCartList = cartList.map((product) => {
-        if (product.id === item.id) {
+      const newCartList = cartList.items.map((product) => {
+        if (
+          product.id === item.id &&
+          product.measures.value === item.measures.value
+        ) {
           product.count += item.count;
+          product.total += item.total;
         }
         return {
           ...product,
         };
       });
-      setCartList(newCartList);
+
+      setCartList({
+        items: newCartList,
+        total: newCartList.reduce((acc, product) => acc + product.total, 0),
+      });
     } else {
-      setCartList([...cartList, item]);
+      setCartList({
+        items: [...cartList.items, item],
+        total: cartList.items.reduce(
+          (acc, product) => acc + product.total,
+          item.total
+        ),
+      });
     }
   };
 
   const clearCart = () => {
-    setCartList([]);
+    setCartList({
+      items: [],
+      total: 0,
+    });
   };
 
-  const deleteItem = (id) => {
-    const newCartList = cartList.filter((product) => product.id !== id);
-    setCartList(newCartList);
+  const deleteItem = (id, measureValue) => {
+    const newCartList = cartList.items;
+    const itemToDeleted = newCartList.findIndex(
+      (product) => product.measures.value === measureValue && product.id === id
+    );
+    newCartList.splice(itemToDeleted, 1);
+
+    setCartList({
+      items: newCartList,
+      total: newCartList.reduce((acc, product) => acc + product.total, 0),
+    });
   };
 
   return (

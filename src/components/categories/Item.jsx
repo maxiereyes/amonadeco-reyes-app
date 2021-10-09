@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/components/item.css";
 
 const Item = ({ product }) => {
-  const { title, subtitle, image, promotion, price, id, stock } = product;
+  const { title, subtitle, image, promotion, measures, id } = product;
 
   return (
     <div className="card p-4 custom_card">
@@ -21,22 +21,18 @@ const Item = ({ product }) => {
         </p>
       </div>
       <div className="text-center ">
-        <h2 className="custom_price">${price}</h2>
+        <h2 className="custom_price">
+          ${measures && measures.length && measures[0].price}
+        </h2>
       </div>
 
-      {stock > 0 ? (
-        <Link
-          className="btn w-100 btn-secondary custom_font_button mt-3 d-flex align-items-center justify-content-center"
-          to={`/detail/${id}`}
-        >
-          <i className="far fa-eye mx-2"></i>
-          <span className="text-light">Ver detalle</span>
-        </Link>
-      ) : (
-        <p className="mx-auto mt-3 mb-0 lead text-secondary text-center border px-2">
-          SIN STOCK
-        </p>
-      )}
+      <Link
+        className="btn w-100 btn-secondary custom_font_button mt-3 d-flex align-items-center justify-content-center"
+        to={`/detail/${id}`}
+      >
+        <i className="far fa-eye mx-2"></i>
+        <span className="text-light">Ver detalle</span>
+      </Link>
     </div>
   );
 };

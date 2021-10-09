@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/components/itemcount.css";
 
-export const ItemCount = ({ stock, initial, addItem }) => {
-  const [btn, setBtn] = useState("btnCart");
+export const ItemCount = ({ stock, initial, addItem, currentMeasures }) => {
+  const [btn, setBtn] = useState(true);
   const [count, setCount] = useState(initial);
+
+  useEffect(() => {
+    setBtn(true);
+    setCount(1);
+  }, [currentMeasures]);
 
   const onAdd = () => {
     if (count < stock) {
@@ -20,7 +25,7 @@ export const ItemCount = ({ stock, initial, addItem }) => {
 
   const addToCart = (count) => {
     addItem(count);
-    setBtn("btnBuyCart");
+    setBtn(false);
   };
 
   return (
@@ -36,9 +41,11 @@ export const ItemCount = ({ stock, initial, addItem }) => {
           </button>
         </div>
       </div>
-      <div className="text-muted text-center mb-2">{`Stock: ${stock}`}</div>
+      <div className="text-muted text-center mb-2">
+        {stock > 0 ? `Stock: ${stock}` : `Sin Stock`}
+      </div>
       <div className="text-center m-2 d-grid bg-white">
-        {btn === "btnCart" ? (
+        {btn ? (
           <button
             className="btn btn-secondary"
             onClick={() => addToCart(count)}

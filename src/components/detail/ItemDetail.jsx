@@ -11,34 +11,41 @@ import { useCartContext } from "../../context/cartContext";
 export const ItemDetail = ({ product }) => {
   const { addToCart } = useCartContext();
   const [currentSelectMeasures, setCurrentSelectMeasures] = useState(
-    product.measures[0].value
+    product.measures[0]
   );
 
   const {
     description,
     title,
     freeTax,
-    price,
     gallery,
     measures,
     subtitle,
     specification,
-    stock,
   } = product;
 
   const addSelectedItem = (e) => {
-    setCurrentSelectMeasures(e.target.value);
+    const selectedMeasures = product.measures.find(
+      (measure) => measure.value === e.target.value
+    );
+    setCurrentSelectMeasures(selectedMeasures);
   };
 
   const onAdd = (count) => {
     addToCart({
       id: product.id,
       title: product.title,
-      price: product.price,
+      price:
+        measures && measures.length
+          ? currentSelectMeasures.price
+          : product.price,
       count,
       measures: currentSelectMeasures,
       image: product.image,
-      total: product.price * count,
+      total:
+        measures && measures.length
+          ? currentSelectMeasures.price * count
+          : product.price * count,
     });
   };
 
@@ -51,10 +58,24 @@ export const ItemDetail = ({ product }) => {
         <h1 className="m-0 mb-2 text-uppercase">{title}</h1>
         <h2 className="m-0 mb-2 lead text-muted">{subtitle}</h2>
         <h3 className="m-0 my-4 font-weight-bold custom__price__font">
-          <CurrencyFormat value={price} prefix="$" />
+          <CurrencyFormat
+            value={
+              measures && measures.length
+                ? currentSelectMeasures.price
+                : product.price
+            }
+            prefix="$"
+          />
         </h3>
         <div className="my-2">
-          <FreeTax tax={freeTax} price={price} />
+          <FreeTax
+            tax={freeTax}
+            price={
+              measures && measures.length
+                ? currentSelectMeasures.price
+                : product.price
+            }
+          />
         </div>
         <div className="d-flex align-items-center">
           <p className="my-0 text-secondary">Medidas:</p>
@@ -64,7 +85,12 @@ export const ItemDetail = ({ product }) => {
         </div>
 
         <div className="mt-4">
-          <ItemCount stock={stock} initial={1} addItem={onAdd} />
+          <ItemCount
+            stock={currentSelectMeasures.stock}
+            initial={1}
+            addItem={onAdd}
+            currentMeasures={currentSelectMeasures}
+          />
         </div>
       </div>
       <div className="border rounded col-12 col-lg-7 my-4">

@@ -17,7 +17,11 @@ export const Cart = ({ product }) => {
         <div className="custom__container__specification">
           <p>
             <span className="custom__measures">MEDIDAS: </span>
-            {product.measures}
+            {product.measures.value}
+          </p>
+          <p>
+            <span className="custom__measures">COLOR: </span>
+            {product.measures.color}
           </p>
         </div>
       </div>
@@ -33,7 +37,7 @@ export const Cart = ({ product }) => {
           type="button"
           className="btn-close position-absolute top-0 end-0"
           aria-label="Close"
-          onClick={() => deleteItem(product.id)}
+          onClick={() => deleteItem(product.id, product.measures.value)}
         ></button>
       </div>
     </div>

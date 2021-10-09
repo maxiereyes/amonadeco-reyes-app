@@ -11,7 +11,6 @@ import { Modal } from "react-bootstrap";
 export const CartGrid = () => {
   const [showModal, setShowModal] = useState(false);
   const { cartList, clearCart } = useCartContext();
-  const subtotal = cartList.reduce((acc, product) => acc + product.total, 0);
   const [loading, setLoading] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -22,18 +21,18 @@ export const CartGrid = () => {
 
     const order = {
       buyer: formState,
-      items: cartList.map((item) => ({
+      items: cartList.items.map((item) => ({
         title: item.title,
         price: item.price,
         quantity: item.count,
       })),
-      total: subtotal,
+      total: cartList.total,
     };
 
     try {
       const id = await addOrder(order);
-      await cartList.forEach(async (item) => {
-        await updateProductStock(item.id, item.count);
+      await cartList.items.forEach(async (item) => {
+        await updateProductStock(item.id, item.measures.value, item.count);
       });
       setLoading(false);
       alert(`Orden Confirmada - ID: #${id}`);
@@ -47,7 +46,7 @@ export const CartGrid = () => {
 
   return (
     <>
-      {cartList.length ? (
+      {cartList.items && cartList.items.length ? (
         <>
           <div className="d-flex">
             <div className="custom__cart__grid">
@@ -56,15 +55,15 @@ export const CartGrid = () => {
               <p className="text-muted ">CANT.</p>
               <p className="text-muted d-none d-sm-block">TOTAL</p>
 
-              {cartList.map((product) => (
-                <Cart product={product} key={product.id} />
+              {cartList.items.map((product, index) => (
+                <Cart product={product} key={`${product.id}-${index}`} />
               ))}
             </div>
             <div className="custom__container__order">
               <div className="d-flex justify-content-between align-tiems-center custom__container__subtotal__order">
                 <div>
                   <p>Subtotal</p>
-                  <p>${subtotal}</p>
+                  <p>${cartList.total}</p>
                 </div>
                 <div>
                   <p>Descuento</p>
@@ -77,7 +76,7 @@ export const CartGrid = () => {
               </div>
               <div className="d-flex justify-content-between align-tiems-center custom__container__total__order">
                 <p>Total</p>
-                <p>${subtotal}</p>
+                <p>${cartList.total}</p>
               </div>
               <button
                 onClick={() => setShowModal(true)}
