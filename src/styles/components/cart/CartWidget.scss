@@ -1,0 +1,44 @@
+@import "../../variables/colors";
+
+.linkCart {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  .linkContainerCart {
+    position: relative;
+    width: fit-content;
+    .iconCart {
+      color: $color-primary;
+      font-size: 1.5rem;
+    }
+
+    .badgeCart {
+      font-size: 0.8rem;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: $color-secondary;
+      color: $color-light-grey;
+      border-radius: 100%;
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .linkCart {
+    display: inline-block;
+    width: 100%;
+    margin: 2rem 0;
+
+    .linkContainerCart {
+      margin: auto;
+    }
+  }
+}

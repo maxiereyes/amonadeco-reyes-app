@@ -1,0 +1,19 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.containerItemDetail {
+  background-color: $color-light-grey;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 992px) {
+  .containerItemDetail {
+    padding: 0;
+    width: 100%;
+  }
+}

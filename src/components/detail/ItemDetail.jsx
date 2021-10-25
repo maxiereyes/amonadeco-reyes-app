@@ -1,144 +1,124 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Col, Row, Tab, Tabs } from "react-bootstrap";
 import { GalleryComponent } from "../gallery/GalleryComponent";
 import { ItemCount } from "./ItemCount";
-import { CurrencyFormat } from "../utils/CurrencyFormat";
-import { FreeTax } from "../utils/FreeTax";
-import { InputSelect } from "../utils/InputSelect";
-import { Title } from "../utils/Title";
-import "../../styles/components/itemdetail.css";
 import { useCartContext } from "../../context/cartContext";
+import "../../styles/components/detail/ItemDetail.scss";
 
 export const ItemDetail = ({ product }) => {
+  const { description, title, gallery, variants, subtitle } = product;
   const { addToCart } = useCartContext();
-  const [currentSelectMeasures, setCurrentSelectMeasures] = useState(
-    product.measures[0]
-  );
+  const [currentColor, setCurrentColors] = useState([]);
+  const [selectedSize, setSelectedSize] = useState(variants[0].size);
+  const [selectedColor, setSelectedColor] = useState(variants[0].color);
 
-  const {
-    description,
-    title,
-    freeTax,
-    gallery,
-    measures,
-    subtitle,
-    specification,
-  } = product;
+  useEffect(() => {
+    const colors = [];
+    variants.forEach((variant) => {
+      if (variant.size === selectedSize) {
+        colors.push(variant.color);
+      }
+    });
+    setCurrentColors(colors);
+    setSelectedColor(colors[0]);
+  }, [variants, selectedSize]);
 
-  const addSelectedItem = (e) => {
-    const selectedMeasures = product.measures.find(
-      (measure) => measure.value === e.target.value
-    );
-    setCurrentSelectMeasures(selectedMeasures);
+  const changeSelectedSize = (e) => {
+    setSelectedSize(e.target.value);
+  };
+
+  const changeSelectedColor = (e) => {
+    setSelectedColor(e.target.value);
+  };
+
+  const getVariants = (key) => {
+    return key
+      ? variants.find(
+          (variant) =>
+            variant.size === selectedSize && variant.color === selectedColor
+        )[key]
+      : variants.find(
+          (variant) =>
+            variant.size === selectedSize && variant.color === selectedColor
+        );
   };
 
   const onAdd = (count) => {
     addToCart({
       id: product.id,
       title: product.title,
-      price:
-        measures && measures.length
-          ? currentSelectMeasures.price
-          : product.price,
+      price: getVariants("price"),
       count,
-      measures: currentSelectMeasures,
+      variants: getVariants(),
       image: product.image,
-      total:
-        measures && measures.length
-          ? currentSelectMeasures.price * count
-          : product.price * count,
+      total: getVariants("price") * count,
     });
   };
 
   return (
-    <div className="row py-4">
-      <div className="col-12 col-lg-7 my-2">
+    <Row className="containerDetail">
+      <Col md={6} className="containerGallery">
         <GalleryComponent images={gallery} />
-      </div>
-      <div className=" px-4 col-12 col-lg-4 offset-lg-1 justify-content-center justify-content-lg-start d-flex flex-column align-items-lg-start align-items-center my-lg-2 my-4">
-        <h1 className="m-0 mb-2 text-uppercase">{title}</h1>
-        <h2 className="m-0 mb-2 lead text-muted">{subtitle}</h2>
-        <h3 className="m-0 my-4 font-weight-bold custom__price__font">
-          <CurrencyFormat
-            value={
-              measures && measures.length
-                ? currentSelectMeasures.price
-                : product.price
-            }
-            prefix="$"
-          />
-        </h3>
-        <div className="my-2">
-          <FreeTax
-            tax={freeTax}
-            price={
-              measures && measures.length
-                ? currentSelectMeasures.price
-                : product.price
-            }
-          />
-        </div>
-        <div className="d-flex align-items-center">
-          <p className="my-0 text-secondary">Medidas:</p>
-          <div className="mx-2">
-            <InputSelect items={measures} setSelectedItem={addSelectedItem} />
+      </Col>
+      <Col md={6} className="containerDetailData">
+        <h1 className="customTitle">{title}</h1>
+        <h2 className="customSubtitle">{subtitle}</h2>
+        <h3 className="customPrice">${variants[0].price.toFixed(2)}</h3>
+        <Tabs
+          defaultActiveKey="description"
+          id="uncontrolled-tab-example"
+          className="containerTabDescription"
+        >
+          <Tab
+            eventKey="description"
+            title="Descripcion"
+            className="itemTabDescription"
+          >
+            <p className="infoTitleTabsDescription">{description}</p>
+          </Tab>
+        </Tabs>
+
+        <div className="containerSelect">
+          <h3 className="titleSelect">Medidas</h3>
+          <div className="containerSelectVariant">
+            <select className="selectVariant" onChange={changeSelectedSize}>
+              {variants.map((item, index) => {
+                if (index === 0 || item.size !== variants[index - 1].size) {
+                  return (
+                    <option key={index} value={item.size}>
+                      {item.size}
+                    </option>
+                  );
+                }
+
+                // eslint-disable-next-line array-callback-return
+                return;
+              })}
+            </select>
           </div>
         </div>
 
-        <div className="mt-4">
-          <ItemCount
-            stock={currentSelectMeasures.stock}
-            initial={1}
-            addItem={onAdd}
-            currentMeasures={currentSelectMeasures}
-          />
-        </div>
-      </div>
-      <div className="border rounded col-12 col-lg-7 my-4">
-        <div className="container__description">
-          <Title text="descripcion" />
-          <p>{description}</p>
-        </div>
-      </div>
-      <div className="border rounded col-12 col-lg-4 offset-lg-1 my-4 align-self-start">
-        <div className="container__specification">
-          <Title text="especificaciones" />
-          {Object.entries(specification).map((item, index) => (
-            <div key={index} className="d-flex align-items-center my-4">
-              <h6 className="m-0 text-uppercase font-weight-bold">
-                {item[0]}:
-              </h6>
-              <p className="m-0 mx-2 text-secondary">{item[1]}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="border rounded col-12 col-lg-7 my-2">
-        <div className="container__reviews">
-          <Title text="comentarios" />
-          <div className="d-flex">
-            <div className="container__avatar p-2">
-              <img
-                className="rounded-circle"
-                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                alt=""
-              />
-            </div>
-            <div className="p-2">
-              <h6 className="m-0 font-weight-bold">Maximiliano</h6>
-              <p className="m-0 font-weight-light ">
-                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Saepe, distinctio?"
-              </p>
-            </div>
+        <div className="containerSelect">
+          <h3 className="titleSelect">Colores</h3>
+          <div className="containerSelectVariant">
+            <select className="selectVariant" onChange={changeSelectedColor}>
+              {currentColor.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
-      </div>
-      <div className="border rounded col-12 col-lg-4 offset-lg-1 my-2">
-        <div className="container__form">
-          <Title text="deja tu comentario" />
-          <p className="text-muted">Tu opinion nos interesa...</p>
-        </div>
-      </div>
-    </div>
+
+        <ItemCount
+          stock={getVariants() ? getVariants().stock : 0}
+          initial={1}
+          addItem={onAdd}
+          currentVariantsSize={selectedSize}
+          currentVariantsColor={selectedColor}
+        />
+      </Col>
+    </Row>
   );
 };

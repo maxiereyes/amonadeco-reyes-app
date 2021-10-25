@@ -1,0 +1,29 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.containerLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  h1 {
+    @include text-Roboto-Thin(1.2rem, 1rem);
+    color: $color-primary;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  .containerLogoImg {
+    width: 80px;
+    height: 80px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.containerNavbar {
+  width: 100%;
+  padding: 0 1rem;
+  background-color: $color-light-grey;
+
+  .navbar {
+    .navbar-collapse {
+      .navbar-nav {
+        margin-left: auto;
+        .nav-item {
+          .nav-link {
+            span {
+              @include text-Roboto-Thin(1rem, 1rem);
+              color: $color-secondary;
+            }
+          }
+        }
+      }
+      .nav-item {
+        .nav-link {
+          span {
+            @include text-Roboto-Thin(1rem, 1rem);
+            color: $color-secondary;
+          }
+        }
+
+        .dropdown-menu {
+          .dropdown-item {
+            @include text-Roboto-Thin(1rem, 1rem);
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+}

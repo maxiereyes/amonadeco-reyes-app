@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getProductById } from "../../api/productsService";
 import { ItemDetail } from "./ItemDetail";
 import { Loading } from "../utils/Loading";
+import "../../styles/components/detail/ItemDetailContainer.scss";
 
 export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -25,13 +26,13 @@ export const ItemDetailContainer = () => {
   }, [idItem]);
 
   return (
-    <div className="container">
+    <div className="containerItemDetail">
       {loading ? (
         <Loading />
       ) : product ? (
         <ItemDetail product={product} />
       ) : (
-        <h1>Not found item</h1>
+        <h2 className="">Not found item</h2>
       )}
     </div>
   );

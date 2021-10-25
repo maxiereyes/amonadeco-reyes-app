@@ -1,0 +1,115 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.containerCartProduct {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .detailImage {
+    width: 80px;
+    height: 80px;
+    background-color: $color-light-grey;
+    margin-right: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .containerDetailItem {
+    width: 50%;
+
+    .productTitle {
+      margin-top: 0.8rem;
+      @include text-Roboto-Thin(1.3rem, 1rem);
+      color: $color-primary;
+    }
+
+    .productVariants {
+      .variantContainer {
+        margin: 0.8rem 0;
+        @include text-Roboto-Black(1rem, 0.5rem);
+        .variant {
+          @include text-Roboto-Thin(1rem, 0.5rem);
+          margin-left: 0.8rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 568px) {
+    .containerDetailItem {
+      width: fit-content;
+    }
+  }
+
+  .productCountContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 35%;
+
+    .productButtonCount {
+      border: none;
+      background-color: $color-white;
+      padding: 0.2rem 0.6rem;
+      margin: 0 1rem;
+
+      i {
+        color: $color-primary;
+      }
+    }
+
+    .productCountValue {
+      @include text-Roboto-Thin(1.2rem, none);
+    }
+  }
+
+  @media (max-width: 568px) {
+    .productCountContainer {
+      margin-top: 1rem;
+      width: 50%;
+      justify-content: flex-start;
+
+      .productButtonCount {
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .productTotal {
+    width: 15%;
+    margin: auto;
+    @include text-Roboto-Black(1.2rem, none);
+    color: $color-primary;
+    text-align: right;
+  }
+
+  @media (max-width: 568px) {
+    .productTotal {
+      width: 50%;
+    }
+  }
+
+  .buttonClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 568px) {
+  .containerCartProduct {
+    padding: 1.5rem 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}

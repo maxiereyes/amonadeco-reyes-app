@@ -1,45 +1,60 @@
 import React from "react";
 import { useCartContext } from "../../context/cartContext";
-import "../../styles/components/cart/cart.css";
+import "../../styles/components/cart/Cart.scss";
 
 export const Cart = ({ product }) => {
-  const { deleteItem } = useCartContext();
+  const { deleteItem, addToCart, substractToCart } = useCartContext();
+
+  const substractCount = () => {
+    if (product.count > 1) {
+      substractToCart({ ...product, count: 1, total: product.price });
+    }
+  };
+
+  const addCount = () => {
+    if (product.count < product.variants.stock) {
+      addToCart({ ...product, count: 1, total: product.price });
+    }
+  };
 
   return (
-    <div className="custom__container__cart">
-      <div>
-        <div className="custom__container__image">
-          <img src={product.image} className="custom__image" alt="" />
+    <div className="containerCartProduct">
+      <div className="detailImage">
+        <img src={product.image} alt={product.imageAlt} />
+      </div>
+      <div className="containerDetailItem">
+        <h3 className="productTitle">{product.title}</h3>
+        <div className="productVariants">
+          <p className="variantContainer">
+            MEDIDAS:
+            <span className="variant">{product.variants.size}</span>
+          </p>
+          <p className="variantContainer">
+            COLOR:
+            <span className="variant">{product.variants.color}</span>
+          </p>
         </div>
+      </div>
+      <div className="productCountContainer">
+        <button className="productButtonCount" onClick={addCount}>
+          <i className="fas fa-plus"></i>
+        </button>
+        <div className="productCountValue">{product.count}</div>
+        <button className="productButtonCount" onClick={substractCount}>
+          <i className="fas fa-minus"></i>
+        </button>
+      </div>
 
-        <h3 className="custom__title">{product.title}</h3>
-        <h6 className="custom__id">{product.id}</h6>
-        <div className="custom__container__specification">
-          <p>
-            <span className="custom__measures">MEDIDAS: </span>
-            {product.measures.value}
-          </p>
-          <p>
-            <span className="custom__measures">COLOR: </span>
-            {product.measures.color}
-          </p>
-        </div>
-      </div>
-      <div>
-        <h5 className="custom__price">${product.price}</h5>
-      </div>
-      <div className="custom__count__container">
-        <h5 className="custom__count">{product.count}</h5>
-      </div>
-      <div className="custom__total__container position-relative">
-        <h5 className="custom__total">${product.count * product.price}</h5>
-        <button
-          type="button"
-          className="btn-close position-absolute top-0 end-0"
-          aria-label="Close"
-          onClick={() => deleteItem(product.id, product.measures.value)}
-        ></button>
-      </div>
+      <h5 className="productTotal">${product.count * product.price}</h5>
+
+      <button
+        type="button"
+        className={["btn-close buttonClose"]}
+        aria-label="Close"
+        onClick={() =>
+          deleteItem(product.id, product.variants.size, product.variants.color)
+        }
+      ></button>
     </div>
   );
 };

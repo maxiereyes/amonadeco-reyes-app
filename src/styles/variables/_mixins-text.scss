@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,500&display=swap");
+
+@mixin text-Roboto-Black($size, $height) {
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin text-Roboto-Medium($size, $height) {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 500;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin text-Roboto-Thin($size, $height) {
+  font-family: "Roboto";
+  font-weight: 100;
+  font-size: $size;
+  line-height: $height;
+}

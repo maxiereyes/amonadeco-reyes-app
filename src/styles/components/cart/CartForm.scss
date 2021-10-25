@@ -1,0 +1,27 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.customInput {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 2px solid $color-light;
+  color: $color-light;
+  @include text-Roboto-Thin(1rem, none);
+  width: 100%;
+  &:focus {
+    background-color: transparent;
+    outline: none;
+    color: $color-white;
+    border-bottom: 2px solid $color-white;
+    transition: border 0.5s ease;
+  }
+}
+
+.labelError {
+  @include text-Roboto-Medium(1rem, none);
+  color: rgb(245, 72, 72);
+  width: 100%;
+  margin-top: 0.5rem;
+}

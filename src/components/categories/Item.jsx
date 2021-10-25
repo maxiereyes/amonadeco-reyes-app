@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/components/item.css";
 
 const Item = ({ product }) => {
-  const { title, subtitle, image, promotion, measures, id } = product;
+  const { title, subtitle, image, promotion, variants, id } = product;
 
   return (
     <div className="card p-4 custom_card">
@@ -22,7 +22,7 @@ const Item = ({ product }) => {
       </div>
       <div className="text-center ">
         <h2 className="custom_price">
-          ${measures && measures.length && measures[0].price}
+          ${variants && variants.length && variants[0].price}
         </h2>
       </div>
 

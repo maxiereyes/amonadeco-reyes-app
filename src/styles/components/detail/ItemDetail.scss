@@ -1,0 +1,143 @@
+@import "../../variables/colors";
+@import "../../variables//mixins-text";
+
+.containerDetail {
+  justify-content: space-between;
+  background-color: $color-white;
+  overflow: hidden;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+
+  .containerGallery {
+    padding: 0;
+  }
+
+  .containerDetailData {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: $color-secondary;
+    padding: 2rem;
+    .customTitle {
+      @include text-Roboto-Black(2.2rem, 1rem);
+      color: $color-white;
+      text-transform: uppercase;
+    }
+
+    .customSubtitle {
+      @include text-Roboto-Thin(1.3rem, 1rem);
+      color: $color-light-grey;
+      margin-top: 1.3rem;
+    }
+
+    .containerTabDescription {
+      background-color: transparent;
+      margin-top: 1.5rem;
+      border: none;
+      border-bottom: 1px solid $color-light-grey;
+
+      a {
+        @include text-Roboto-Medium(0.8rem, 1rem);
+        color: $color-light;
+
+        &:hover {
+          border-color: transparent;
+          border-bottom: 3px solid $color-primary;
+        }
+      }
+
+      .active {
+        color: $color-light-grey;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid $color-primary;
+      }
+    }
+
+    .itemTabDescription {
+      height: 5rem;
+      padding: 1.2rem 0.8rem;
+      overflow: auto;
+      margin-bottom: 1.5rem;
+
+      .infoTitleTabsDescription {
+        @include text-Roboto-Thin(0.9rem, 1rem);
+        color: $color-light-grey;
+      }
+    }
+
+    .customPrice {
+      @include text-Roboto-Black(2rem, 1rem);
+      color: $color-white;
+      margin-top: 3rem;
+    }
+
+    .containerSelect {
+      margin-top: 1rem;
+      .titleSelect {
+        @include text-Roboto-Black(1rem, 1rem);
+        letter-spacing: 0.05em;
+        color: $color-light-grey;
+        padding-left: 0.8rem;
+      }
+
+      .containerSelectVariant {
+        width: 50%;
+        height: 40px;
+        border-radius: 20px;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        .selectVariant {
+          @include text-Roboto-Thin(0.9rem, 1rem);
+          background-color: $color-primary;
+          color: $color-light-grey;
+          width: 100%;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          appearance: none;
+          padding-left: 0.8rem;
+
+          option {
+            @include text-Roboto-Thin(0.9rem, 1rem);
+            color: $color-light-grey;
+          }
+        }
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f063";
+          padding: 8px 0.8rem;
+          color: $color-light-grey;
+          z-index: 1;
+          pointer-events: none;
+          box-sizing: border-box;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .containerSelectVariant {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .containerDetail {
+    border-radius: 0;
+
+    .containerDetailData {
+      border-top-right-radius: 30px;
+      border-top-left-radius: 30px;
+    }
+  }
+}

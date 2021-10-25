@@ -1,0 +1,40 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.customModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  position: relative;
+
+  .closeButtonModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $color-white;
+    border: none;
+
+    i {
+      font-size: 1.5rem;
+      color: black;
+    }
+  }
+
+  .customImageModalError {
+    font-size: 2rem;
+    color: red;
+  }
+
+  .customImageModalSuccess {
+    font-size: 2rem;
+    color: green;
+  }
+
+  .customMessageModal {
+    @include text-Roboto-Thin(1.2rem, none);
+    color: $color-secondary;
+    margin-top: 1.5rem;
+  }
+}

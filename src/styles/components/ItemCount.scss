@@ -1,0 +1,86 @@
+@import "../variables/colors";
+@import "../variables/mixins-text";
+
+.customContainer {
+  margin-top: 1.5rem;
+  .containerCount {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    .titleCount {
+      @include text-Roboto-Black(1rem, 1rem);
+      letter-spacing: 0.05em;
+      color: $color-light-grey;
+      text-align: left;
+      padding-left: 0.8rem;
+    }
+
+    .containerItemCount {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-primary;
+      width: 10rem;
+      border-radius: 20px;
+      padding: 0.2rem;
+
+      .buttonItemCount {
+        border-radius: 100%;
+        border: none;
+        background-color: $color-primary;
+        color: $color-light;
+        margin: 0;
+        padding: 0.2rem 0.6rem;
+
+        &:hover {
+          background-color: $color-light-grey;
+          color: $color-primary;
+        }
+      }
+
+      .numberItemCount {
+        @include text-Roboto-Thin(1rem, 1rem);
+        border: none;
+        color: $color-white;
+      }
+    }
+  }
+
+  .stockItemCount {
+    color: $color-light-grey;
+    @include text-Roboto-Thin(0.8rem, 0);
+    font-style: italic;
+    margin: 0.8rem;
+    text-align: center;
+  }
+
+  .buttonCustom {
+    @include text-Roboto-Thin(1rem, 1rem);
+    letter-spacing: 0.02em;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .buttonAddCart {
+    background-color: $color-light;
+    color: $color-light-grey;
+  }
+
+  .buttonBuy {
+    background-color: $color-light-grey;
+    color: $color-light;
+  }
+
+  .linkContinueBuy {
+    @include text-Roboto-Thin(0.8rem, 1rem);
+    letter-spacing: 0.07em;
+    color: $color-light-grey;
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+  }
+}

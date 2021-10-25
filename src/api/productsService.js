@@ -32,22 +32,27 @@ export const getProductsByCategoryId = async (idCategory) => {
   return data;
 };
 
-export const updateProductStock = async (id, measureValue, newCount) => {
+export const updateProductStock = async (
+  id,
+  variantSize,
+  variantColor,
+  newCount
+) => {
   const response = await productsCollection.doc(id).get();
   const data = await response.data();
-  const measuresEditStock = data.measures.map((measure) => {
-    if (measure.value === measureValue) {
+  const variantEditStock = data.variants.map((variant) => {
+    if (variant.size === variantSize && variant.color === variantColor) {
       return {
-        ...measure,
-        stock: measure.stock - newCount,
+        ...variant,
+        stock: variant.stock - newCount,
       };
     }
 
     return {
-      ...measure,
+      ...variant,
     };
   });
   return await productsCollection.doc(id).update({
-    measures: measuresEditStock,
+    variants: variantEditStock,
   });
 };
