@@ -1,0 +1,22 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.slick-slider {
+  @media (max-width: 480px) {
+    .slick-dots {
+      bottom: -40px;
+    }
+  }
+}
+
+.slick-next {
+  &::before {
+    color: $color-primary !important;
+  }
+}
+
+.slick-prev {
+  &::before {
+    color: $color-primary !important;
+  }
+}

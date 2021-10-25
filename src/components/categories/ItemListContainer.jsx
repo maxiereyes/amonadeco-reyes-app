@@ -7,6 +7,9 @@ import {
 import ItemList from "./ItemList";
 import { Loading } from "../utils/Loading";
 import { getCategoryNameById } from "../../api/categoryService";
+import { Hero } from "../hero/Hero";
+import { Container } from "react-bootstrap";
+import { HighlistCategories } from "./HighlistCategories";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -38,17 +41,21 @@ export const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <div className="container my-4">
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <ItemList
-            products={products}
-            title={nameCategory ? nameCategory : "Productos Destacados"}
-          />
-        </>
-      )}
-    </div>
+    <>
+      {!loading && !nameCategory && <Hero />}
+      <Container style={{ padding: "2rem 0" }}>
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            {!nameCategory && <HighlistCategories />}
+            <ItemList
+              products={products}
+              title={nameCategory ? nameCategory : "Productos Destacados"}
+            />
+          </>
+        )}
+      </Container>
+    </>
   );
 };

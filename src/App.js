@@ -4,6 +4,7 @@ import { ItemListContainer } from "./components/categories/ItemListContainer";
 import NavBar from "./components/navbar/NavBar";
 import { CartListContainer } from "./components/cart/CartListContainer";
 import CartContextProvider from "./context/cartContext";
+import { Footer } from "./components/footer/Footer";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
 
             <Route exact path="/cart" component={CartListContainer} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     </CartContextProvider>

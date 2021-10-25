@@ -2,27 +2,26 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../styles/components/common/customcarousel.css";
+import "../../styles/components/common/CustomCarousel.scss";
 import Item from "../categories/Item";
-import { NextButton, PrevButton } from "./CustomCarouselButtons";
+import { Container } from "react-bootstrap";
 
 export const CustomCarousel = ({ items }) => {
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    nextArrow: <NextButton />,
-    prevArrow: <PrevButton />,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    swipeToSlide: true,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
         },
       },
       {
@@ -44,12 +43,12 @@ export const CustomCarousel = ({ items }) => {
   };
 
   return (
-    <div className="w-100">
+    <Container>
       <Slider {...settings}>
         {items.map((item) => (
-          <Item key={item.id} product={item} />
+          <Item key={item.id} product={item} fromHome={true} />
         ))}
       </Slider>
-    </div>
+    </Container>
   );
 };

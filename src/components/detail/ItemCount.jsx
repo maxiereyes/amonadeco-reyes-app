@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "../../styles/components/ItemCount.scss";
+import "../../styles/components/item/ItemCount.scss";
 
 export const ItemCount = ({
   stock,

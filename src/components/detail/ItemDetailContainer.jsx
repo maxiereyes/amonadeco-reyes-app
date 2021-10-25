@@ -32,7 +32,7 @@ export const ItemDetailContainer = () => {
       ) : product ? (
         <ItemDetail product={product} />
       ) : (
-        <h2 className="">Not found item</h2>
+        <h2 className="titleNoProductFound">No se encontro el producto.</h2>
       )}
     </div>
   );

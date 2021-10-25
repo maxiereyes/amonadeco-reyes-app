@@ -17,3 +17,12 @@
     width: 100%;
   }
 }
+
+.titleNoProductFound {
+  @include text-Roboto-Medium(1.5rem, none);
+  color: $color-secondary;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

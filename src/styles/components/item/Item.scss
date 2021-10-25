@@ -1,0 +1,104 @@
+@import "../../variables/colors";
+@import "../../variables/mixins-text";
+
+.cardItemWidthHome {
+  width: 90%;
+}
+
+.cardItemWidthCategory {
+  width: 25%;
+}
+
+.cardItemContainer {
+  position: relative;
+  background-color: $color-white;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0 auto;
+
+  .cardItemContainerImage {
+    width: 100%;
+    height: 10rem;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .cardItemImage {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .cardItemTitle {
+    width: 100%;
+    @include text-Roboto-Black(1.3rem, none);
+    letter-spacing: 0.07em;
+    color: $color-primary;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
+
+  .cardItemSubtitle {
+    width: 100%;
+    @include text-Roboto-Thin(1rem, none);
+    letter-spacing: 0.07em;
+    color: $color-primary;
+    padding: 0 0.5rem;
+  }
+
+  .cardItemPrice {
+    width: 100%;
+    @include text-Roboto-Medium(1.2rem, none);
+    letter-spacing: 0.07em;
+    color: $color-secondary;
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+  }
+
+  .cardItemOverlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-primary;
+    opacity: 0;
+    transition: 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cardItemButton {
+      display: block;
+      text-decoration: none;
+      width: 90%;
+      padding: 0.5rem 0;
+      text-align: center;
+      @include text-Roboto-Thin(1.5rem, none);
+      color: $color-light-grey;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .cardItemOverlay {
+      opacity: 0.8;
+
+      &:hover {
+        .cardItemButton {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardItemWidthCategory {
+    width: 40%;
+    margin: 1rem 1rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .cardItemWidthCategory {
+    width: 90%;
+    margin: 1rem 1rem;
+  }
+}
