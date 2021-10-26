@@ -33,4 +33,4 @@ npm run start
 
 ## Demo
 
-![](https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631901496/AmonaDeco/Grabacio%C3%8C_n_de_pantalla_2021-09-17_a_la_s_14.42.46_online-video-cutter.com_d16skr.gif)
+![](https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1635209528/Grabacion_Compra_Amona_Deco_online-video-cutter.com_dayo7z.gif)
