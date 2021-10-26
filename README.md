@@ -8,17 +8,19 @@
 - Navegacion con react-router-dom entre categorias y productos
 - Galeria de imagenes con libreria externa para detalle de los items
 - Manejo de Hooks para renderizacion y obtencion de datos
+- Uso de Context Api para todo el ABM de carrito
+- Uso de Firebase para almacenamiento de Productos, Categorias y Ordenes.
 
 ## Tecnologias
 
 Lista de tecnologias utilizadas en el proyecto:
 
 - [ReactJS]
-- [Visual Studio Code]
 - [react-bootstrap]
 - [react-image-gallery] - Libreria externa para galeria de imagenes
 - [react-slick] - Libreria externa para manejo de carousel
 - [Axios] - Para peticion de API's
+- [Firebase] - Firestore como Base de Datos
 
 ## Instalacion
 
@@ -32,7 +34,3 @@ npm run start
 ## Demo
 
 ![](https://res.cloudinary.com/www-amonadeco-com-ar/image/upload/v1631901496/AmonaDeco/Grabacio%C3%8C_n_de_pantalla_2021-09-17_a_la_s_14.42.46_online-video-cutter.com_d16skr.gif)
-
-## Desarrollo
-
-Desarrollo a partir de realizacion de curso en progresos en la academia CoderHouse.

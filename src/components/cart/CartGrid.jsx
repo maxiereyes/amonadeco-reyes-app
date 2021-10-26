@@ -33,6 +33,8 @@ export const CartGrid = () => {
         title: item.title,
         price: item.price,
         quantity: item.count,
+        size: item.variants.size,
+        color: item.variants.color,
       })),
       total: cartList.total,
     };
@@ -59,7 +61,7 @@ export const CartGrid = () => {
       setDataModal({
         show: true,
         status: "error",
-        message: "",
+        message: error.message,
       });
     } finally {
       setLoading(false);

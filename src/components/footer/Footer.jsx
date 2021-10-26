@@ -13,7 +13,6 @@ export const Footer = () => {
     const getAllCategories = async () => {
       try {
         const cate = await getCategories();
-        console.log(cate);
         setCategories(cate);
       } catch (error) {
         setCategories([]);
@@ -47,8 +46,8 @@ export const Footer = () => {
       </div>
       <div className="footerSocials">
         <Title text="Seguinos" />
-        <i class="fab fa-facebook socialIcon"></i>
-        <i class="fab fa-instagram-square socialIcon"></i>
+        <i className="fab fa-facebook socialIcon"></i>
+        <i className="fab fa-instagram-square socialIcon"></i>
       </div>
     </div>
   );

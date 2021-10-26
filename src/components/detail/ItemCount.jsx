@@ -45,11 +45,19 @@ export const ItemCount = ({
       <div className="containerCount">
         <h3 className="titleCount">Cantidad</h3>
         <div className="containerItemCount">
-          <button className="buttonItemCount" onClick={onAdd}>
+          <button
+            className="buttonItemCount"
+            onClick={onAdd}
+            disabled={stock === 0}
+          >
             <i className="fas fa-plus"></i>
           </button>
-          <div className="numberItemCount">{count}</div>
-          <button className="buttonItemCount" onClick={onSubstract}>
+          <div className="numberItemCount">{stock === 0 ? 0 : count}</div>
+          <button
+            className="buttonItemCount"
+            onClick={onSubstract}
+            disabled={stock === 0}
+          >
             <i className="fas fa-minus"></i>
           </button>
         </div>
@@ -60,6 +68,7 @@ export const ItemCount = ({
 
       {btn ? (
         <button
+          disabled={stock === 0}
           className="buttonCustom buttonAddCart"
           onClick={() => addToCart(count)}
         >
